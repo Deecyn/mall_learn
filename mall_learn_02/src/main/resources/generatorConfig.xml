@@ -28,11 +28,15 @@
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="deecyn.mall_learn_02.mbg.model" targetProject="mall_learn_02/src/main/java"/>
-        <sqlMapGenerator targetPackage="deecyn.mall_learn_02.mbg.mapper" targetProject="mall_learn_02/src/main/resources"/>
+        <sqlMapGenerator targetPackage="mbg-mapper" targetProject="mall_learn_02/src/main/resources"/>
         <javaClientGenerator type="XMLMAPPER" targetPackage="deecyn.mall_learn_02.mbg.mapper"
                              targetProject="mall_learn_02/src/main/java"/>
 
-        <table tableName="pms_brand">
+        <table tableName="pms_brand" domainObjectName="PmsBrand"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+<!--             <columnOverride column="create_time" javaType="java.time.LocalDateTime"/>-->
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>
