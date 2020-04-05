@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="deecyn.mall_learn_01.dao.PmsBrandMapper">
+
+    <resultMap id="BaseResultMap" type="deecyn.mall_learn_01.model.PO.PmsBrand">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="first_letter" property="firstLetter"/>
+        <result column="sort" property="sort"/>
+        <result column="factory_status" property="factoryStatus"/>
+        <result column="show_status" property="showStatus"/>
+        <result column="product_count" property="productCount"/>
+        <result column="product_comment_count" property="productCommentCount"/>
+        <result column="show_status" property="showStatus"/>
+        <result column="logo" property="logo"/>
+        <result column="big_pic" property="bigPic"/>
+        <result column="brand_story" property="brandStory"/>
+    </resultMap>
+
+    <sql id="BaseColumns">
+        id,name,first_letter,sort,factory_status,show_status,product_count,
+        product_comment_count,show_status,logo,big_pic,brand_story
+    </sql>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select <include refid="BaseColumns"/> from pms_brand
+    </select>
+
+    <select id="selectAllPage" resultMap="BaseResultMap">
+        select <include refid="BaseColumns"/> from pms_brand limit #{startIndex},#{endIndex}
+    </select>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select <include refid="BaseColumns"/> from pms_brand where id = #{id}
+    </select>
+
+    <update id="updatePmsBrand">
+        update pms_brand
+        <set>
+            <if test="brand.name != null">
+                name = #{brand.name},
+            </if>
+            <if test="brand.firstLetter != null">
+                first_letter = #{brand.firstLetter},
+            </if>
+            <if test="brand.sort != null">
+                sort = #{brand.sort,jdbcType=INTEGER},
+            </if>
+            <if test="brand.factoryStatus != null">
+                factory_status = #{brand.factoryStatus,jdbcType=INTEGER},
+            </if>
+            <if test="brand.showStatus != null">
+                show_status = #{brand.showStatus,jdbcType=INTEGER},
+            </if>
+            <if test="brand.productCount != null">
+                product_count = #{brand.productCount,jdbcType=INTEGER},
+            </if>
+            <if test="brand.productCommentCount != null">
+                product_comment_count = #{brand.productCommentCount,jdbcType=INTEGER},
+            </if>
+            <if test="brand.logo != null">
+                logo = #{brand.logo,jdbcType=VARCHAR},
+            </if>
+            <if test="brand.bigPic != null">
+                big_pic = #{brand.bigPic,jdbcType=VARCHAR},
+            </if>
+            <if test="brand.brandStory != null">
+                brand_story = #{brand.brandStory,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    
+    <insert id="insert" parameterType="deecyn.mall_learn_01.model.PO.PmsBrand">
+        insert into pms_brand
+        (name,first_letter,sort,factory_status,product_count,
+        product_comment_count,show_status,logo,big_pic,brand_story)
+        values
+        (#{name},#{firstLetter},#{sort},#{factoryStatus},
+        #{productCount},#{productCommentCount},#{showStatus},#{logo},#{bigPic},#{brandStory})
+    </insert>
+
+    <delete id="deletePmsBrand">
+        delete from pms_brand where id = #{id}
+    </delete>
+
+</mapper>
