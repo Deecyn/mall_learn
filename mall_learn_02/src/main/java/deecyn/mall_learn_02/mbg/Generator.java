@@ -18,10 +18,10 @@ public class Generator {
     public static void main(String[] args) throws Exception {
         //MBG 执行过程中的警告信息
         List<String> warnings = new ArrayList<String>();
-        //当生成的代码重复时，覆盖原代码
+        //当生成的代码重复时，覆盖原代码，但是不会覆盖 xml 文件
         boolean overwrite = true;
         //读取我们的 MBG 配置文件
-        InputStream is = Generator.class.getResourceAsStream("/generatorConfig.xml");
+        InputStream is = Generator.class.getResourceAsStream("/mybatis-generator-config.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(is);
         is.close();

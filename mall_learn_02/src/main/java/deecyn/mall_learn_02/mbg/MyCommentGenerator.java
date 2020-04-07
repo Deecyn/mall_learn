@@ -13,7 +13,7 @@ import java.util.Properties;
  * @version 1.0
  * Description: 自定义的 mybatis-generator 注释生成器
  */
-public class CommentGenerator extends DefaultCommentGenerator {
+public class MyCommentGenerator extends DefaultCommentGenerator {
     private boolean addRemarkComments = false;
 
     /**

@@ -65,7 +65,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
-
+<!-- -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -90,21 +90,27 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
+            <!--  引入 MyBatis-Generator 插件 -->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.7</version>
 
                 <configuration>
+                    <!--  引入 MyBatis-Generator 的配置文件 -->
                     <configurationFile>./src/main/resources/generatorConfig.xml</configurationFile>
+                    <!--  允许 MBG 将构建消息写入日志中  -->
                     <verbose>true</verbose>
+                    <!--  再次运行 MBG 时，允许覆盖已生成的文件，但是不会覆盖 xml 文件  -->
                     <overwrite>true</overwrite>
                 </configuration>
+
                 <dependencies>
+                    <!--  引入 mysql 的 JDBC 驱动，否则会报错找不到驱动  -->
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>${mysql.version}</version>
+                        <version>5.1.48</version>
                     </dependency>
                 </dependencies>
             </plugin>
