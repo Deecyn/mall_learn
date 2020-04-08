@@ -9,7 +9,7 @@ import java.util.List;
  * @version 1.0
  * Description: PageHelper 分页 -- 数据封装类
  */
-public class Page<T> {
+public class ResPage<T> {
     private Integer pageNum;
     private Integer pageSize;
     private Integer totalPage;
@@ -22,8 +22,8 @@ public class Page<T> {
      * @param <T> 数据类型
      * @return
      */
-    public static <T> Page<T> restPage(List<T> list) {
-        Page<T> result = new Page<>();
+    public static <T> ResPage<T> restPage(List<T> list) {
+        ResPage<T> result = new ResPage<>();
         PageInfo<T> pageInfo = new PageInfo<>(list);
 
         result.setTotalPage(pageInfo.getPages());

@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * Description:
  */
 @Configuration
-@MapperScan("deecyn.mall_learn_02.dao")
+@MapperScan({"deecyn.mall_learn_02.dao", "deecyn.mall_learn_02.mbg.mapper"})
 public class MyBatisConfig {
 }

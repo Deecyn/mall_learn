@@ -125,10 +125,7 @@
         </javaClientGenerator>
 
         <!-- 配置需要生成代码的数据库表 -->
-        <table tableName="pms_brand" domainObjectName="PmsBrand"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
+        <table tableName="pms_brand" domainObjectName="PmsBrand">
 
             <!-- 指定是否只生成 domain 类，默认为 false；
             如果设置为 true，则只生成 domain 类，如果还配置了sqlMapGenerator，那么
