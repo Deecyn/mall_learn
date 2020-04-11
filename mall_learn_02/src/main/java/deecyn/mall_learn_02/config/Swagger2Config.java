@@ -40,7 +40,6 @@ public class Swagger2Config {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("Swagger API 文档")
                 .description("mall-learn-02")
-                .contact("Deecyn")
                 .version("1.02")
                 .build();
     }
