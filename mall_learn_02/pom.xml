@@ -79,8 +79,8 @@
             <version>2.9.2</version>
 
             <!--  忽略原版本的 swagger-annotations 和 swagger-models，添加 1.5.21 版本的；
-                    解决 Illegal DefaultValue null for parameter type integer 和 NumberFormatException:
-                    For input string: "" 异常 -->
+                    解决「Illegal DefaultValue null for parameter type integer 和 NumberFormatException:
+                    For input string: ""」异常 -->
             <exclusions>
                 <exclusion>
                     <groupId>io.swagger</groupId>

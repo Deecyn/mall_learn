@@ -1,11 +1,10 @@
 package deecyn.mall_learn_02.controller;
 
-import deecyn.mall_learn_02.common.api.RegexRuleEnum;
+import deecyn.mall_learn_02.common.RegexRuleEnum;
 import deecyn.mall_learn_02.common.api.ResponseMsg;
 import deecyn.mall_learn_02.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 

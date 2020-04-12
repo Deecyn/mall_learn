@@ -1,4 +1,4 @@
-package deecyn.mall_learn_02.common.api;
+package deecyn.mall_learn_02.common;
 
 /**
  * @author Deecyn
