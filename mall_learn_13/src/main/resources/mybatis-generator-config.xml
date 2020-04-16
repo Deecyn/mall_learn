@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MyBatis-Generator 相关配置 -->
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="mybatis-generator.properties"/>
+    <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="JavaFileEncoding" value="UTF-8"/>
+        
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <commentGenerator type="deecyn.mall_learn_13.mbg.MyCommentGenerator">
+            <property name="author" value="Deecyn"/>
+            <property name="suppressAllComments" value="true"/>
+            <property name="dateFormat" value="yyyy/MM/dd"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
+        
+        <jdbcConnection driverClass="${jdbc.driverClass}" connectionURL="${jdbc.connectionURL}"
+                        userId="${jdbc.userId}" password="${jdbc.password}">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+
+
+        <javaModelGenerator targetPackage="deecyn.mall_learn_13.mbg.model" targetProject="mall_learn_13/src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mbg-mapper" targetProject="mall_learn_13/src/main/resources"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="deecyn.mall_learn_13.mbg.mapper"
+                             targetProject="mall_learn_13/src/main/java/"/>
+
+        <table tableName="%">
+            <generatedKey column="id" sqlStatement="MySQL" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
