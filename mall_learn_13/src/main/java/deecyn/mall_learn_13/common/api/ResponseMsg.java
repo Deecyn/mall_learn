@@ -58,6 +58,26 @@ public class ResponseMsg<T> {
         return new ResponseMsg<T>(ResponseCodeEnum.VALIDATE_FAILED.getCode(), message, null);
     }
 
+    /**
+     * 没有访问权限时的响应结果，数据 data 默认为空
+     * @param data 未授权的提示信息
+     * @param <T> data 的数据类型
+     * @return
+     */
+    public static <T> ResponseMsg<T> forbidden(T data) {
+        return new ResponseMsg<>(ResponseCodeEnum.FORBIDDEN.getCode(), ResponseCodeEnum.FORBIDDEN.getDescription(), data);
+    }
+
+    /**
+     * 未授权（未登录等）时的返回结果
+     * @param data 未授权的提示信息
+     * @param <T> data 的数据类型
+     * @return
+     */
+    public static <T> ResponseMsg<T> unauthorized(T data) {
+        return new ResponseMsg<>(ResponseCodeEnum.UNAUTHORIZED.getCode(), ResponseCodeEnum.UNAUTHORIZED.getDescription(), data);
+    }
+
     public Integer getCode() {
         return code;
     }
