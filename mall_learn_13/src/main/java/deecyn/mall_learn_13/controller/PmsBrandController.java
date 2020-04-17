@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.bind.BindResult;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -32,12 +33,14 @@ public class PmsBrandController {
 
     @ApiOperation("查询所有品牌")
     @GetMapping("/listAll")
+    @PreAuthorize("hasAuthority('pms:brand:read')")
     public ResponseMsg<List<PmsBrand>> getPmsBrandList() {
         return ResponseMsg.success(pmsBrandService.listAllBrand());
     }
 
     @ApiOperation("添加品牌")
     @PostMapping("/create")
+    @PreAuthorize("hasAuthority('pms:brand:create')")
     public ResponseMsg<PmsBrand> createBrand(@RequestBody PmsBrand pmsBrand) {
         int count = pmsBrandService.createBrand(pmsBrand);
         if (count == 1) {
@@ -51,6 +54,7 @@ public class PmsBrandController {
 
     @ApiOperation("更新品牌信息")
     @PostMapping("/update/{id}")
+    @PreAuthorize("hasAuthority('pms:brand:update')")
     public ResponseMsg<PmsBrand> updateBrand(@PathVariable Integer id, @RequestBody PmsBrand pmsBrand,
                                              BindResult bindResult) {
         int count = pmsBrandService.updateBrand(id, pmsBrand);
@@ -65,6 +69,7 @@ public class PmsBrandController {
 
     @ApiOperation("删除品牌")
     @PostMapping("/delete/{id}")
+    @PreAuthorize("hasAuthority('pms:brand:delete')")
     public ResponseMsg<Integer> deleteBrand(@PathVariable("id") Integer id) {
         int count = pmsBrandService.deleteBrand(id);
         if (count == 1) {
@@ -78,12 +83,14 @@ public class PmsBrandController {
 
     @ApiOperation("根据 id 查询品牌信息")
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('pms:brand:read')")
     public ResponseMsg<PmsBrand> getBrand(@PathVariable("id") Integer id) {
          return ResponseMsg.success(pmsBrandService.getBrand(id));
     }
 
     @ApiOperation("分页查询品牌列表")
     @GetMapping("/list")
+    @PreAuthorize("hasAuthority('pms:brand:read')")
     public ResponseMsg<ResultPage<PmsBrand>> listBrand(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                                        @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
         List<PmsBrand> pmsBrandList = pmsBrandService.listBrand(pageNum, pageSize);

@@ -69,7 +69,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // 禁用缓存
         httpSecurity.headers().cacheControl();
         // 添加 JWT 过滤器
-        httpSecurity.addFilterBefore(getJwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         // 添加自定义的未登录或者未授权时的返回结果
         httpSecurity.exceptionHandling()
@@ -79,17 +79,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(getUserDetailsService())
-                .passwordEncoder(getPasswordEncoder());
+        auth.userDetailsService(userDetailsService())
+                .passwordEncoder(passwordEncoder());
     }
 
     @Bean
-    public JwtAuthenticationTokenFilter getJwtAuthenticationTokenFilter() {
+    public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter() {
         return new JwtAuthenticationTokenFilter();
     }
 
     @Bean
-    public UserDetailsService getUserDetailsService(){
+    public UserDetailsService userDetailsService(){
         return username -> {
             UmsAdmin admin = umsAdminService.getAdminByUsername(username);
             if (admin != null) {
@@ -100,7 +100,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         };
     }
 
-    public PasswordEncoder getPasswordEncoder() {
+    @Bean
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 

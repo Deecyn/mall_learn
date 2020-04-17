@@ -1,5 +1,8 @@
 package deecyn.mall_learn_13.mbg.model;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -16,6 +19,7 @@ public class UmsAdmin implements Serializable {
      *
      * @mbg.generated 2020/04/13
      */
+    @ApiModelProperty(value = "用户名")
     private String username;
 
     /**
@@ -23,6 +27,7 @@ public class UmsAdmin implements Serializable {
      *
      * @mbg.generated 2020/04/13
      */
+    @ApiModelProperty(value = "密码")
     private String password;
 
     /**
@@ -30,6 +35,7 @@ public class UmsAdmin implements Serializable {
      *
      * @mbg.generated 2020/04/13
      */
+    @ApiModelProperty("头像")
     private String icon;
 
     /**
@@ -37,6 +43,7 @@ public class UmsAdmin implements Serializable {
      *
      * @mbg.generated 2020/04/13
      */
+    @ApiModelProperty(value = "邮箱")
     private String email;
 
     /**
@@ -44,6 +51,7 @@ public class UmsAdmin implements Serializable {
      *
      * @mbg.generated 2020/04/13
      */
+    @ApiModelProperty(value = "昵称")
     private String nickName;
 
     /**

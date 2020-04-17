@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="deecyn.mall_learn_13.dao.UmsAdminRoleRelationDao">
+    <resultMap id="BaseResultMap" type="deecyn.mall_learn_13.mbg.model.UmsPermission">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="pid" jdbcType="INTEGER" property="pid" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="value" jdbcType="VARCHAR" property="value" />
+        <result column="icon" jdbcType="VARCHAR" property="icon" />
+        <result column="type" jdbcType="INTEGER" property="type" />
+        <result column="uri" jdbcType="VARCHAR" property="uri" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="sort" jdbcType="INTEGER" property="sort" />
+    </resultMap>
+
+    <select id="getPermissionList" resultMap="BaseResultMap">
+        SELECT up.*
+        FROM ums_admin_role_relation uarr LEFT JOIN ums_role ur ON uarr.role_id = ur.id
+            LEFT JOIN ums_role_permission_relation urpr ON urpr.role_id = ur.id
+            LEFT JOIN ums_permission up ON urpr.permission_id = up.id
+        WHERE uarr.admin_id = #{adminId} AND up.id IS NOT NULL
+            AND up.id NOT IN (
+                SELECT up2.id
+                FROM ums_admin_permission_relation uapr2 LEFT JOIN ums_permission up2 ON uapr2.permission_id = up2.id
+                WHERE uapr2.type = -1 AND uapr2.admin_id = #{adminId}
+            )
+        UNION
+        SELECT up.*
+        FROM ums_admin_permission_relation uapr
+            LEFT JOIN ums_permission up ON uapr.permission_id = up.id
+        WHERE uapr.type = 1 AND uapr.admin_id = #{adminId}
+    </select>
+</mapper>

@@ -30,7 +30,7 @@ public class JwtTokenUtil {
     private String secret;
 
     /** token 的过期时间  */
-    @Value("${jwt.expiration")
+    @Value("${jwt.expiration}")
     private Long expiration;
 
     /**
