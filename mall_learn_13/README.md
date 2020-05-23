@@ -25,22 +25,30 @@ JWT 由 header.payload.signature 三部分组成：
 ```json
 # Header：
 {
-  "alg": "HS256",  # 签名的生成算法
-  "typ": "JWT"  # 这个 token 的类型，JWT 中统一写为 JWT。
+  # 签名的生成算法
+  "alg": "HS256", 
+  # 这个 token 的类型，JWT 中统一写为 JWT。 
+  "typ": "JWT"  
 }
 
 # Payload，负载，用于存放用户名、token 的生成时间和过期时间等信息。
 #   Payload 的每一项又叫一个 Claim，所以 payload 又被称为 Claims 。如下：
 {
-  "sub": "svlada@gmail.com",  # 主题，用户名（Subject）
-  "scopes": [  # 权限范围
+  # 主题，用户名（Subject）
+  "sub": "svlada@gmail.com", 
+  # 权限范围 
+  "scopes": [  
     "ROLE_ADMIN",
     "ROLE_PREMIUM_MEMBER"
   ],
-  "iss": "http://svlada.com",  # 签发人（issuer）
-  "iat": 1472033308,  # 签发时间（Issued At）
-  "exp": 147,  # 过期时间（expiration time）
-  "jti": "90afe78c-1d2e-4869-a77e-1d754b60e0ce" # 编号（JWT ID）
+  # 签发人（issuer）
+  "iss": "http://svlada.com", 
+  # 签发时间（Issued At） 
+  "iat": 1472033308, 
+  # 过期时间（expiration time） 
+  "exp": 147,  
+  # 编号（JWT ID）
+  "jti": "90afe78c-1d2e-4869-a77e-1d754b60e0ce" 
 }
 
 # Signature，签名，根据 Header 中的签名算法和服务端指定的一个密钥（secret），
@@ -69,9 +77,11 @@ Authorization: Bearer<token>
 
 ### 2. JWT 的配置
 
-
+JWT token 的工具类，根据用户信息生成 token、从 token 中解析中相关信息、判断 token 是否有效等。代码文件如下：
 
 [JwtTokenUtil.java](https://github.com/Deecyn/mall_learn/blob/master/mall_learn_13/src/main/java/deecyn/mall_learn_13/common/util/JwtTokenUtil.java)
+
+JWT 过滤器的设置：
 
 [JwtAuthenticationTokenFilter.java](https://github.com/Deecyn/mall_learn/blob/master/mall_learn_13/src/main/java/deecyn/mall_learn_13/component/JwtAuthenticationTokenFilter.java)
 
@@ -79,9 +89,9 @@ Authorization: Bearer<token>
 
 ## 二、关于 Spring Security
 
-关于 Spring Security 的配置：
+关于 Spring Security 的配置的代码文件如下：
 
-源代码： [SpringSecurityConfig.java](https://github.com/Deecyn/mall_learn/blob/master/mall_learn_13/src/main/java/deecyn/mall_learn_13/config/SpringSecurityConfig.java)
+[SpringSecurityConfig.java](https://github.com/Deecyn/mall_learn/blob/master/mall_learn_13/src/main/java/deecyn/mall_learn_13/config/SpringSecurityConfig.java)
 
 ### @EnableWebSecurity 注解
 
@@ -100,8 +110,8 @@ Authorization: Bearer<token>
 ```java
 // org.springframework.security.core.userdetails.UserDetailsService
 public interface UserDetailsService {
-
-	 UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+    
+    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 }
 ```
 
@@ -178,25 +188,25 @@ public PasswordEncoder passwordEncoder() {
 /** 对 HttpSecurity 进行配置，配置路径及资源的访问权限  */
 @Override
 public void configure(HttpSecurity httpSecurity) throws Exception {
-	// 省略其它代码的展示···
+    // 省略其它代码的展示···
   
-  // 添加 JWT 过滤器
-  httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter(), 
-  			UsernamePasswordAuthenticationFilter.class);
-  // ····
+    // 添加 JWT 过滤器
+    httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter(), 
+            UsernamePasswordAuthenticationFilter.class);
+    // ····
 }
 
 @Bean
 public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter() {
-   return new JwtAuthenticationTokenFilter();
+    return new JwtAuthenticationTokenFilter();
 }
 ```
 
 HttpSecurity 有三个常用的添加过滤器的方法：
 
-- `addFilterBefore(Filter filter, Class<? extends Filter> beforeFilter)` ，在 beforeFilter 之前添加 filter 。
-- `addFilterAfter(Filter filter, Class<? extends Filter> afterFilter)` ，在 afterFilter 之后添加 filter 。
-- `addFilterAt(Filter filter, Class<? extends Filter> atFilter)` ，在与 atFilter 位置相同的地方添加 filter， 新添加  filter 不会覆盖原先的 atFilter 。对于这些位置相同的 Filter，他们执行的先后顺序是不确定的。
+- `addFilterBefore(Filter filter, Class<? extends Filter> beforeFilter)` 方法，在 beforeFilter 之前添加 filter 。
+- `addFilterAfter(Filter filter, Class<? extends Filter> afterFilter)` 方法，在 afterFilter 之后添加 filter 。
+- `addFilterAt(Filter filter, Class<? extends Filter> atFilter)` 方法，在与 atFilter 位置相同的地方添加 filter， 新添加  filter 不会覆盖原先的 atFilter 。对于这些位置相同的 Filter，他们执行的先后顺序是不确定的。
 
 -----
 
