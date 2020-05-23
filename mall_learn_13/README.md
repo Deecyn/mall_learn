@@ -22,7 +22,7 @@ Spring Security 是一个基于 Spring 的、功能强大且高度可定制的�
 
 JWT 由 header.payload.signature 三部分组成：
 
-```javascript
+```json
 # Header：
 {
   "alg": "HS256",  # 签名的生成算法
@@ -30,7 +30,7 @@ JWT 由 header.payload.signature 三部分组成：
 }
 
 # Payload，负载，用于存放用户名、token 的生成时间和过期时间等信息。
-#   Payload 的每一项又叫一个 Claim，所以 payload 又被称为 Claims 。
+#   Payload 的每一项又叫一个 Claim，所以 payload 又被称为 Claims 。如下：
 {
   "sub": "svlada@gmail.com",  # 主题，用户名（Subject）
   "scopes": [  # 权限范围
