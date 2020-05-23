@@ -2,7 +2,15 @@
 
 此项目主要是增加了 **Spring Security 和 JWT 的整合**，文档目录如下：
 
-[TOC]
+* [一、关于 JWT (JSON Web Token)：](#一关于-jwt-json-web-token)
+    * [1. JWT 的格式](#1-jwt-的格式)
+    * [2. JWT 的配置](#2-jwt-的配置)
+* [二、关于 Spring Security](#二关于-spring-security)
+    * [@EnableWebSecurity 注解](#enablewebsecurity-注解)
+    * [WebSecurityConfigurerAdapter 抽象类](#websecurityconfigureradapter-抽象类)
+    * [关于 UserDetails](#关于-userdetails)
+    * [密码的加密与解密验证](#密码的加密与解密验证)
+* [三、Spring Security 与 JWT 的整合](#三spring-security-与-jwt-的整合)
 
 Spring Security 是一个基于 Spring 的、功能强大且高度可定制的身份验证和访问控制框架。 JWT (JSON Web Token) 是为了在网络环境中传递声明而设计的一种基于 JSON 的开放式标准（RFC 7519），该 token 被设计为紧凑且安全的，一般被用来在服务端和客户端之间传递、认证身份信息。
 
