@@ -22,38 +22,38 @@ Spring Security 是一个基于 Spring 的、功能强大且高度可定制的�
 
 JWT 由 header.payload.signature 三部分组成：
 
-```json
-# Header：
+```
+// Header：
 {
-  # 签名的生成算法
+  // 签名的生成算法
   "alg": "HS256", 
-  # 这个 token 的类型，JWT 中统一写为 JWT。 
+  // 这个 token 的类型，JWT 中统一写为 JWT。 
   "typ": "JWT"  
 }
 
-# Payload，负载，用于存放用户名、token 的生成时间和过期时间等信息。
-#   Payload 的每一项又叫一个 Claim，所以 payload 又被称为 Claims 。如下：
+// Payload，负载，用于存放用户名、token 的生成时间和过期时间等信息。
+//   Payload 的每一项又叫一个 Claim，所以 payload 又被称为 Claims 。如下：
 {
-  # 主题，用户名（Subject）
+  // 主题，用户名（Subject）
   "sub": "svlada@gmail.com", 
-  # 权限范围 
+  // 权限范围 
   "scopes": [  
     "ROLE_ADMIN",
     "ROLE_PREMIUM_MEMBER"
   ],
-  # 签发人（issuer）
+  // 签发人（issuer）
   "iss": "http://svlada.com", 
-  # 签发时间（Issued At） 
+  // 签发时间（Issued At） 
   "iat": 1472033308, 
-  # 过期时间（expiration time） 
+  // 过期时间（expiration time） 
   "exp": 147,  
-  # 编号（JWT ID）
+  // 编号（JWT ID）
   "jti": "90afe78c-1d2e-4869-a77e-1d754b60e0ce" 
 }
 
-# Signature，签名，根据 Header 中的签名算法和服务端指定的一个密钥（secret），
-#   对 Header 和 payload 中的内容进行 base64 编码后，再加密生成。
-#   一旦 header 和 payload 被篡改，验证将失败。如下：
+// Signature，签名，根据 Header 中的签名算法和服务端指定的一个密钥（secret），
+//   对 Header 和 payload 中的内容进行 base64 编码后，再加密生成。
+//   一旦 header 和 payload 被篡改，验证将失败。如下：
 HMACSHA512(
   base64UrlEncode(header) + "." + 
   base64UrlEncode(payload),
@@ -157,14 +157,14 @@ public UserDetailsService userDetailsService(){
 ```java
 @Override
 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-  auth.userDetailsService(userDetailsService())
-    .passwordEncoder(passwordEncoder());
+    auth.userDetailsService(userDetailsService())
+        .passwordEncoder(passwordEncoder());
 }
 
 /** 设置对密码加密的编码器  */
 @Bean
-public PasswordEncoder passwordEncoder() {
-  return new BCryptPasswordEncoder();
+public PasswordEncoder passwordEncoder() { 
+    return new BCryptPasswordEncoder();
 }
 ```
 
