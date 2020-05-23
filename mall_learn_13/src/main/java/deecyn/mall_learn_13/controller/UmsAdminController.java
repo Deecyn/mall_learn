@@ -64,6 +64,13 @@ public class UmsAdminController {
         return ResponseMsg.success(permissionList);
     }
 
+    @ApiOperation(value = "登出功能")
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseMsg<Object> logout() {
+        return ResponseMsg.success(null);
+    }
+
     /**
      * 用户身份信息
      * @param principal 目前为假数据

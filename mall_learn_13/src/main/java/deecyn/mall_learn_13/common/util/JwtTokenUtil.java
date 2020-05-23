@@ -35,8 +35,6 @@ public class JwtTokenUtil {
 
     /**
      * 根据用户信息生成 token
-     * @param userDetails
-     * @return
      */
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
@@ -48,8 +46,6 @@ public class JwtTokenUtil {
 
     /**
      * 从 token 中获取登录用户名
-     * @param token
-     * @return
      */
     public String getUsernameFromToken(String token) {
         String username;
@@ -66,7 +62,6 @@ public class JwtTokenUtil {
      * 验证客户端的 token 是否还有效
      * @param token 客户端传入的 token
      * @param userDetails 从数据库查询出来的用户信息
-     * @return
      */
     public boolean validateClientToken(String token, UserDetails userDetails) {
         String username = getUsernameFromToken(token);
@@ -84,8 +79,6 @@ public class JwtTokenUtil {
 
     /**
      * 刷新 token
-     * @param token
-     * @return
      */
     public String refreshToken(String token) {
         Claims claims = getClaimsFromToken(token);
@@ -96,7 +89,6 @@ public class JwtTokenUtil {
     /**
      * 判断 token 是否已经失效
      * @param token 待判断的 token
-     * @return
      */
     private boolean isTokenExpired(String token) {
         Date expireDate = getClaimsFromToken(token).getExpiration();
@@ -105,8 +97,6 @@ public class JwtTokenUtil {
 
     /**
      * 从 token 中获取 JWT 的负载
-     * @param token
-     * @return
      */
     private Claims getClaimsFromToken(String token) {
         Claims claims = null;
@@ -121,19 +111,21 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 生成 JWT 中 payload 声明生成 token
-     * @param claims payload 声明，键值对
-     * @return
+     * 根据 JWT 中 payload 中的声明（claim），来生成 token。
+     * @param claims JWT token 中的一些「声明」，键值对。（payload 的别称）
      */
     private String generateToken(Map<String, Object> claims) {
-        return Jwts.builder().setClaims(claims).setExpiration(generateExpirationDate())
+        return Jwts.builder()
+                // 需要先调用 setClaims() 方法以创建一个 Claims 对象；
+                .setClaims(claims)
+                .setExpiration(generateExpirationDate())
                 .signWith(SignatureAlgorithm.HS512, secret)
+                // 将生成的 JWT 序列为一个字符串
                 .compact();
     }
 
     /**
      * 生成 token 的过期时间
-     * @return Date
      */
     private Date generateExpirationDate() {
         return new Date(System.currentTimeMillis() + expiration * 1000);
