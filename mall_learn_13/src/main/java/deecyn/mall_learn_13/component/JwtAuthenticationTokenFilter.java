@@ -9,11 +9,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import springfox.documentation.spi.service.contexts.SecurityContext;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -55,7 +52,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         String authHeader = request.getHeader(this.tokenHeader);
         // 如果 Authorization 请求头不为空，且身份验证方案为 tokenHead (Bearer) ，则表示此 HTTP 请求包含 JWT 的信息。
         if (authHeader != null && authHeader.startsWith(tokenHead)) {
-            // 截取掉前面的 tokenHead 字符串，获取 JWT 的 token 字符串
+            // 截取掉前面的 tokenHead 字符串 "Bearer"，获取 JWT 的 token 字符串
             String authToken = authHeader.substring(this.tokenHead.length());
             // 从 token 字符串解析出用户名
             String username = jwtTokenUtil.getUsernameFromToken(authToken);

@@ -9,6 +9,7 @@
     * [@EnableWebSecurity 注解](#enablewebsecurity-注解)
     * [WebSecurityConfigurerAdapter 抽象类](#websecurityconfigureradapter-抽象类)
     * [关于 UserDetails](#关于-userdetails)
+    * [关于 Authentication 和 SecurityContextHolder](#关于-Authentication-和-SecurityContextHolder)
     * [密码的加密与解密验证](#密码的加密与解密验证)
 * [三、Spring Security 与 JWT 的整合](#三spring-security-与-jwt-的整合)
 
@@ -103,7 +104,7 @@ JWT 过滤器的设置：
 
 ### 关于 UserDetails
 
-在用户进行登录或其它操作时，系统会根据用户名，从存储设备中查找该用户的密码、权限、账户是否有效等信息，将其封装成一个 UserDetails 对象，并用 UserDetails 对象中的数据对用户进行认证。也可以根据自己的业务需求对该类进行扩展或自定义，例如 [AdminUserDetails.java](https://github.com/Deecyn/mall_learn/blob/master/mall_learn_13/src/main/java/deecyn/mall_learn_13/dto/AdminUserDetails.java) 类。
+在用户进行登录或其它操作时，系统会根据用户名，从存储设备中查找该用户的密码、权限、账户是否有效等信息，将其封装成一个临时的 UserDetails 对象，并用 UserDetails 对象中的数据对用户进行认证。也可以根据自己的业务需求对该类进行扩展或自定义，例如 [AdminUserDetails.java](https://github.com/Deecyn/mall_learn/blob/master/mall_learn_13/src/main/java/deecyn/mall_learn_13/dto/AdminUserDetails.java) 类。
 
 对于从存储设备中查找该用户的信息用于封装 UserDetails 对象，则封装在 UserDetailsService 接口的实现中，该接口中只有一个 loadUserByUsername() 方法：
 
@@ -148,7 +149,13 @@ public UserDetailsService userDetailsService(){
 }
 ```
 
+### 关于 Authentication 和 SecurityContextHolder
 
+在 [JwtAuthenticationTokenFilter.java](https://github.com/Deecyn/mall_learn/blob/master/mall_learn_13/src/main/java/deecyn/mall_learn_13/component/JwtAuthenticationTokenFilter.java) 过滤器以及登录等逻辑中，用到了 SecurityContextHolder 和 Authentication 来检验用户的身份。
+
+其中，**Authentication** 是 Spring Security 的一个核心接口，在用户登录认证成功之后会为其生成一个信息更全面的 Authentication 对象，然后把它保存在 SecurityContextHolder 所持有的 SecurityContext 中，供后续的程序进行调用，如身份的认证、访问权限的鉴定等。
+
+**SecurityContextHolder** 是用来保存 SecurityContext 的，它持有着当前用户的 SecurityContext 。而 SecurityContext 持有的是代表当前用户相关信息的 Authentication 对象的引用，这个 Authentication 对象不需要我们自己去创建，在与系统交互的过程中，Spring Security 会自动为我们创建。
 
 ### 密码的加密与解密验证
 

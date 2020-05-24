@@ -59,7 +59,7 @@ public class ResponseMsg<T> {
     }
 
     /**
-     * 没有访问权限时的响应结果，数据 data 默认为空
+     * 没有访问权限时的响应结果
      * @param data 未授权的提示信息
      * @param <T> data 的数据类型
      * @return

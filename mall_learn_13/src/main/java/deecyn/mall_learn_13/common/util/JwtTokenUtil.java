@@ -1,7 +1,6 @@
 package deecyn.mall_learn_13.common.util;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
@@ -118,7 +117,9 @@ public class JwtTokenUtil {
         return Jwts.builder()
                 // 需要先调用 setClaims() 方法以创建一个 Claims 对象；
                 .setClaims(claims)
+                // 设置过期时间
                 .setExpiration(generateExpirationDate())
+                // 设置签名算法和加密密钥
                 .signWith(SignatureAlgorithm.HS512, secret)
                 // 将生成的 JWT 序列为一个字符串
                 .compact();
@@ -128,7 +129,7 @@ public class JwtTokenUtil {
      * 生成 token 的过期时间
      */
     private Date generateExpirationDate() {
-        return new Date(System.currentTimeMillis() + expiration * 1000);
+        return new Date(System.currentTimeMillis() + expiration);
     }
 
 }
