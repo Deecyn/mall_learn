@@ -6,10 +6,9 @@ import deecyn.mall_learn_14.common.api.ResponseMsg;
 import deecyn.mall_learn_14.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 import java.util.regex.Pattern;
 
 /**
@@ -22,8 +21,12 @@ import java.util.regex.Pattern;
 @RequestMapping("/sso")
 public class UmsMemberController {
 
-    @Resource
-    private UmsMemberService umsMemberService;
+    private final UmsMemberService umsMemberService;
+
+    @Autowired
+    public UmsMemberController(UmsMemberService umsMemberService) {
+        this.umsMemberService = umsMemberService;
+    }
 
     @ApiOperation("获取验证码")
     @GetMapping("/getAutCode")

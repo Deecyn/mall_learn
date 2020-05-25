@@ -3,10 +3,10 @@ package deecyn.mall_learn_14.service.impl;
 
 import deecyn.mall_learn_14.service.RedisService;
 import deecyn.mall_learn_14.service.UmsMemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.Random;
 
 /**
@@ -17,7 +17,6 @@ import java.util.Random;
 @Service
 public class UmsMemberServiceImpl implements UmsMemberService {
 
-    @Resource
     private RedisService redisService;
 
     @Value("${redis.key.prefix.authCode}")
@@ -25,6 +24,11 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 
     @Value("${redis.key.expire.authCode}")
     private Long AUTH_CODE_EXPIRE_SECONDS;
+
+    @Autowired
+    public UmsMemberServiceImpl(RedisService redisService) {
+        this.redisService = redisService;
+    }
 
     @Override
     public String generateAuthCode(String telephone) {

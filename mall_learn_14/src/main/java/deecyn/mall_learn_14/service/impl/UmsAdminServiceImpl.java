@@ -21,7 +21,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -35,24 +34,29 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UmsAdminServiceImpl.class);
 
-    @Resource
-    private UserDetailsService userDetailsService;
-
-    @Resource
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private JwtTokenUtil jwtTokenUtil;
-
     @Value("${jwt.tokenHead")
     private String tokenHead;
 
-    @Resource
-    private UmsAdminMapper umsAdminMapper;
+    private final UserDetailsService userDetailsService;
 
-    @Resource
-    private UmsAdminRoleRelationDao umsAdminRoleRelationDao;
+    private final PasswordEncoder passwordEncoder;
 
+    private final JwtTokenUtil jwtTokenUtil;
+
+    private final UmsAdminMapper umsAdminMapper;
+
+    private final UmsAdminRoleRelationDao umsAdminRoleRelationDao;
+
+    @Autowired
+    public UmsAdminServiceImpl(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder,
+                               JwtTokenUtil jwtTokenUtil, UmsAdminMapper umsAdminMapper,
+                               UmsAdminRoleRelationDao umsAdminRoleRelationDao) {
+        this.userDetailsService = userDetailsService;
+        this.passwordEncoder = passwordEncoder;
+        this.jwtTokenUtil = jwtTokenUtil;
+        this.umsAdminMapper = umsAdminMapper;
+        this.umsAdminRoleRelationDao = umsAdminRoleRelationDao;
+    }
 
     @Override
     public UmsAdmin getAdminByUsername(String username) {

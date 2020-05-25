@@ -28,14 +28,18 @@ import java.util.Map;
 @RequestMapping("/admin")
 public class UmsAdminController {
 
-    @Autowired
-    private UmsAdminService umsAdminService;
+    private final UmsAdminService umsAdminService;
 
     @Value("${jwt.tokenHeader}")
     private String tokenHeader;
 
     @Value("${jwt.tokenHead}")
     private String tokenHead;
+
+    @Autowired
+    public UmsAdminController(UmsAdminService umsAdminService) {
+        this.umsAdminService = umsAdminService;
+    }
 
     @ApiOperation(value = "登录，登录成功以后返回 token")
     @PostMapping(value = "/login")

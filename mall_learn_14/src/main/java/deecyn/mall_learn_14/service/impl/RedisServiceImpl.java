@@ -1,10 +1,10 @@
 package deecyn.mall_learn_14.service.impl;
 
 import deecyn.mall_learn_14.service.RedisService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -15,8 +15,12 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisServiceImpl implements RedisService {
 
-    @Resource
     private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    public RedisServiceImpl(StringRedisTemplate stringRedisTemplate) {
+        this.stringRedisTemplate = stringRedisTemplate;
+    }
 
     @Override
     public void set(String key, String value) {

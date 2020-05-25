@@ -5,9 +5,9 @@ import deecyn.mall_learn_14.mbg.mapper.PmsBrandMapper;
 import deecyn.mall_learn_14.mbg.model.PmsBrand;
 import deecyn.mall_learn_14.mbg.model.PmsBrandExample;
 import deecyn.mall_learn_14.service.PmsBrandService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -18,8 +18,12 @@ import java.util.List;
 @Service
 public class PmsBrandServiceImpl implements PmsBrandService {
 
-    @Resource
-    private PmsBrandMapper brandMapper;
+    private final PmsBrandMapper brandMapper;
+
+    @Autowired
+    public PmsBrandServiceImpl(PmsBrandMapper brandMapper) {
+        this.brandMapper = brandMapper;
+    }
 
     @Override
     public List<PmsBrand> listAllBrand() {
