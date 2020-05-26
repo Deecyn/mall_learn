@@ -1,26 +1,52 @@
 package deecyn.mall_learn_14.service;
 
+import com.github.pagehelper.PageHelper;
+import deecyn.mall_learn_14.mbg.mapper.PmsBrandMapper;
 import deecyn.mall_learn_14.mbg.model.PmsBrand;
+import deecyn.mall_learn_14.mbg.model.PmsBrandExample;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 /**
  * @author Deecyn
  * @version 0.14
- * Description:
+ * Description: 商品品牌管理 Service
  */
-public interface PmsBrandService {
+@Service
+public class PmsBrandService {
 
-    List<PmsBrand> listAllBrand();
+    private final PmsBrandMapper brandMapper;
 
-    int createBrand(PmsBrand pmsBrand);
+    @Autowired
+    public PmsBrandService(PmsBrandMapper brandMapper) {
+        this.brandMapper = brandMapper;
+    }
 
-    int updateBrand(Integer id, PmsBrand pmsBrand);
+    public List<PmsBrand> listAllBrand() {
+        return brandMapper.selectByExample(new PmsBrandExample());
+    }
 
-    int deleteBrand(Integer id);
+    public int createBrand(PmsBrand pmsBrand) {
+        return brandMapper.insertSelective(pmsBrand);
+    }
 
-    List<PmsBrand> listBrand(int pageNum, int pageSize);
+    public int updateBrand(Integer id, PmsBrand pmsBrand) {
+        pmsBrand.setId(id);
+        return brandMapper.updateByPrimaryKeySelective(pmsBrand);
+    }
 
-    PmsBrand getBrand(Integer id);
+    public int deleteBrand(Integer id) {
+        return brandMapper.deleteByPrimaryKey(id);
+    }
 
+    public List<PmsBrand> listBrand(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        return brandMapper.selectByExample(new PmsBrandExample());
+    }
+
+    public PmsBrand getBrand(Integer id) {
+        return brandMapper.selectByPrimaryKey(id);
+    }
 }
-

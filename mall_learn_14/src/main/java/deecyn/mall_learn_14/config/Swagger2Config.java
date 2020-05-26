@@ -31,7 +31,7 @@ public class Swagger2Config {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("deecyn.mall_learn_13.controller"))
+                .apis(RequestHandlerSelectors.basePackage("deecyn.mall_learn_14.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -41,7 +41,7 @@ public class Swagger2Config {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("Mall 商城 Swagger API 文档")
-                .description("mall-learn-13")
+                .description("mall-learn-14")
                 .version("1.03")
                 .build();
     }

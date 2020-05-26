@@ -50,6 +50,17 @@ public class ResponseMsg<T> {
     }
 
     /**
+     * 多种情况下，操作失败时的响应结果
+     * @param code 返回的响应码
+     * @param message 返回的提示消息
+     * @param data 返回的数据
+     * @return ResponseMsg<T>
+     */
+    public static <T> ResponseMsg<T> failed(Integer code, String message, T data) {
+        return new ResponseMsg<>(ResponseCodeEnum.FAILED.getCode(), message, null);
+    }
+
+    /**
      * 参数校验失败时的响应结果，数据 data 默认为空
      * @param message 返回的提示消息
      * @return ResponseMsg<T>
