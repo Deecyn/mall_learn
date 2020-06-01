@@ -1,0 +1,59 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: mall_learn_15
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall_learn?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root1234
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 3000ms
+
+redis:
+  key:
+    prefix:
+      authCode: "portal:authCode:"
+    expire:
+      authCode: 120
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:mbg_mapper/*.xml
+    - classpath*:deecyn/**/mapper/*.xml
+
+jwt:
+  tokenHeader: Authorization # JWT 存储的请求头
+  secret: mySecret # JWT 加密、解密使用的密钥
+  expiration: 8640_0000 # token 的过期时间，（毫秒数：1000 * 60 * 60 * 24）
+  tokenHead: Bearer # JWT 负载中拿到开头
+
+# OSS相关配置信息
+aliyun:
+  oss:
+    endpoint: mall-oss.deecyn.com # oss对外服务的访问域名
+    accessKeyId: LTAI4GDzoquzY8MKMwfrJM82 # 访问身份验证中用到用户标识
+    accessKeySecret: ofWuAGwFAXJvvwCUdwbJmpAr8HU87q # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    bucketName: deecyn-mall-oss # oss的存储空间
+    policy:
+      expire: 300 # 签名有效期(S)
+    maxSize: 10 # 上传文件大小(M)
+    callback: http://localhost:8080/aliyun/oss/callback # 文件上传成功后的回调地址
+    dir:
+      prefix: mall/images/ # 上传文件夹路径前缀
+
+
+
