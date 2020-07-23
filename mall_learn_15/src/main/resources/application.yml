@@ -21,6 +21,13 @@ spring:
         max-idle: 8
         min-idle: 0
     timeout: 3000ms
+  data:
+    # 配置 elasticsearch 操作数据
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-nodes: 127.0.0.1:9300  # es的连接地址及端口号
+      cluster-name: elasticsearch # es集群的名称
 
 redis:
   key:
@@ -54,6 +61,7 @@ aliyun:
     callback: http://localhost:8080/aliyun/oss/callback # 文件上传成功后的回调地址
     dir:
       prefix: mall/images/ # 上传文件夹路径前缀
+
 
 
 

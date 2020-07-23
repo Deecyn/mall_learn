@@ -8,21 +8,21 @@ public class PmsProductAttributeValue implements Serializable {
     /**
      * 商品id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productId;
 
     /**
      * 商品属性 id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productAttributeId;
 
     /**
      * 手动添加规格或参数的值，参数单值，规格有多个时以英文逗号隔开
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String value;
 

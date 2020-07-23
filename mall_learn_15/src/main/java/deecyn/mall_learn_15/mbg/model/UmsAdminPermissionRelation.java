@@ -6,7 +6,7 @@ public class UmsAdminPermissionRelation implements Serializable {
     /**
      * 表id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer id;
 

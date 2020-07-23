@@ -3,34 +3,15 @@ package deecyn.mall_learn_15.mbg.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class UmsRole implements Serializable {
-    /**
-     * 后台用户角色id
-     *
-     * @mbg.generated 2020/07/22
-     */
+public class PmsProductVerifyRecord implements Serializable {
     private Integer id;
 
     /**
-     * 名称
+     * 商品id
      *
      * @mbg.generated 2020/07/22
      */
-    private String name;
-
-    /**
-     * 描述
-     *
-     * @mbg.generated 2020/07/22
-     */
-    private String description;
-
-    /**
-     * 后台用户数量
-     *
-     * @mbg.generated 2020/07/22
-     */
-    private Integer adminCount;
+    private Integer productId;
 
     /**
      * 创建时间
@@ -40,18 +21,25 @@ public class UmsRole implements Serializable {
     private LocalDateTime createTime;
 
     /**
-     * 启用状态，0->禁用；1->启用
+     * 审核人
+     *
+     * @mbg.generated 2020/07/22
+     */
+    private String verifyMan;
+
+    /**
+     * 审核后的状态，0->未通过，1->已通过
      *
      * @mbg.generated 2020/07/22
      */
     private Integer status;
 
     /**
-     * 排序
+     * 反馈详情
      *
      * @mbg.generated 2020/07/22
      */
-    private Integer sort;
+    private String detail;
 
     private static final long serialVersionUID = 1L;
 
@@ -63,28 +51,12 @@ public class UmsRole implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
-    }
-
-    public Integer getAdminCount() {
-        return adminCount;
-    }
-
-    public void setAdminCount(Integer adminCount) {
-        this.adminCount = adminCount;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public LocalDateTime getCreateTime() {
@@ -95,6 +67,14 @@ public class UmsRole implements Serializable {
         this.createTime = createTime;
     }
 
+    public String getVerifyMan() {
+        return verifyMan;
+    }
+
+    public void setVerifyMan(String verifyMan) {
+        this.verifyMan = verifyMan == null ? null : verifyMan.trim();
+    }
+
     public Integer getStatus() {
         return status;
     }
@@ -103,12 +83,12 @@ public class UmsRole implements Serializable {
         this.status = status;
     }
 
-    public Integer getSort() {
-        return sort;
+    public String getDetail() {
+        return detail;
     }
 
-    public void setSort(Integer sort) {
-        this.sort = sort;
+    public void setDetail(String detail) {
+        this.detail = detail == null ? null : detail.trim();
     }
 
     @Override
@@ -118,12 +98,11 @@ public class UmsRole implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", description=").append(description);
-        sb.append(", adminCount=").append(adminCount);
+        sb.append(", productId=").append(productId);
         sb.append(", createTime=").append(createTime);
+        sb.append(", verifyMan=").append(verifyMan);
         sb.append(", status=").append(status);
-        sb.append(", sort=").append(sort);
+        sb.append(", detail=").append(detail);
         sb.append("]");
         return sb.toString();
     }

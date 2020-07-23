@@ -8,21 +8,21 @@ public class PmsProductAttributeCategory implements Serializable {
     /**
      * 商品属性分类的名称
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String name;
 
     /**
      * 属性数量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer attributeCount;
 
     /**
      * 参数数量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer paramCount;
 

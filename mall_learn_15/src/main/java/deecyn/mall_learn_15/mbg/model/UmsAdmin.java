@@ -7,70 +7,70 @@ public class UmsAdmin implements Serializable {
     /**
      * 后台用户，id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer id;
 
     /**
      * 用户名
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String username;
 
     /**
      * 密码
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String password;
 
     /**
      * 头像
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String icon;
 
     /**
      * 邮箱
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String email;
 
     /**
      * 昵称
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String nickName;
 
     /**
      * 备注信息
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String note;
 
     /**
      * 创建时间
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private LocalDateTime createTime;
 
     /**
      * 最后登录时间
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private LocalDateTime loginTime;
 
     /**
      * 账号启用状态，0->禁用；1->启用
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer status;
 

@@ -6,7 +6,7 @@ public class UmsRolePermissionRelation implements Serializable {
     /**
      * 后台用户角色和权限关系id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer id;
 

@@ -6,7 +6,7 @@ public class UmsAdminRoleRelation implements Serializable {
     /**
      * 后台用户和角色关系id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer id;
 

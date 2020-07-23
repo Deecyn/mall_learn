@@ -1,6 +1,8 @@
 package deecyn.mall_learn_15.common.api;
 
 import com.github.pagehelper.PageInfo;
+import org.springframework.data.domain.Page;
+
 import java.util.List;
 
 /**
@@ -28,6 +30,19 @@ public class ResultPage<T> {
         resultPage.setList(pageInfo.getList());
 
         return resultPage;
+    }
+
+    /**
+     * 将SpringData分页后的list转为分页信息
+     */
+    public static <T> ResultPage<T> restPage(Page<T> pageInfo) {
+        ResultPage<T> result = new ResultPage<>();
+        result.setTotalPage(pageInfo.getTotalPages());
+        result.setPageNum(pageInfo.getNumber());
+        result.setPageSize(pageInfo.getSize());
+        result.setTotal(pageInfo.getTotalElements());
+        result.setList(pageInfo.getContent());
+        return result;
     }
 
     public Integer getPageNum() {

@@ -6,77 +6,77 @@ public class PmsBrand implements Serializable {
     /**
      * 商品品牌id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer id;
 
     /**
      * 商品品牌名称
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String name;
 
     /**
      * 品牌首字母
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String firstLetter;
 
     /**
      * 排序
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer sort;
 
     /**
      * 是否为品牌制造商：0->不是；1->是
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer factoryStatus;
 
     /**
      * 显示状态
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer showStatus;
 
     /**
      * 产品计数
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productCount;
 
     /**
      * 产品评论数量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String productCommentCount;
 
     /**
      * 品牌logo图片
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String logo;
 
     /**
      * 品牌大图
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String bigPic;
 
     /**
      * 品牌故事
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String brandStory;
 

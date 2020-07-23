@@ -10,287 +10,287 @@ public class PmsProduct implements Serializable {
     /**
      * 品牌 id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer brandId;
 
     /**
      * 品牌名称
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String brandName;
 
     /**
      * 产品分类 id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productCategoryId;
 
     /**
      * 产品分类名称
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String productCategoryName;
 
     /**
      * 运费模板 id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer freightTemplateId;
 
     /**
      * 品牌属性 id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productAttributeCategoryId;
 
     /**
      * 商品名称
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String name;
 
     /**
      * 图片
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String pic;
 
     /**
      * 商品货号
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String productSn;
 
     /**
      * 删除状态：0->未删除；1->已删除。
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer deleteStatus;
 
     /**
      * 上架状态：0->下架；1->上架。
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer publishStatus;
 
     /**
      * 新品状态：0->不是新品；1->新品。
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer newStatus;
 
     /**
      * 推荐状态：0->不推荐；1->推荐
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer recommendStatus;
 
     /**
      * 审核状态：0->未审核；1->审核通过
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer verifyStatus;
 
     /**
      * 排序
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer sort;
 
     /**
      * 销量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer sale;
 
     /**
      * 价格
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal price;
 
     /**
      * 促销价格
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal promotionPrice;
 
     /**
      * 赠送的成长值
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer giftGrowth;
 
     /**
      * 赠送的积分
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer giftPoint;
 
     /**
      * 限制使用的积分数量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer usePointLimit;
 
     /**
      * 副标题
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
-    private String subTittle;
+    private String subTitle;
 
     /**
      * 市场价
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal originalPrice;
 
     /**
      * 库存
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer stock;
 
     /**
      * 库存预警值
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer lowStock;
 
     /**
      * 单位
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String unit;
 
     /**
      * 商品重量，默认为克
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal weight;
 
     /**
      * 是否为预告商品：0->不是；1->是。
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer previewStatus;
 
     /**
      * 以逗号分隔的产品服务，1->无忧退货；2->快速退款；3->免费包邮。
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String serviceIds;
 
     /**
      * 关键字
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String keywords;
 
     /**
      * 备注
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String note;
 
     /**
      * 画册图片，连产品图片限制为5张，以英文逗号分隔
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String albumPics;
 
     /**
      * 详情标题
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
-    private String detailTittle;
+    private String detailTitle;
 
     /**
      * 促销开始时间
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private LocalDateTime promotionStartTime;
 
     /**
      * 促销结束时间
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private LocalDateTime promotionEndTime;
 
     /**
      * 活动限购数量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer promotionPerLimit;
 
     /**
      * 促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer promotionType;
 
     /**
      * 商品描述
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String description;
 
     /**
      * 详情描述
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String detailDesc;
 
     /**
      * 产品详情网页内容
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String detailHtml;
 
     /**
      * 移动端网页详情内容
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String detailMobileHtml;
 
@@ -472,12 +472,12 @@ public class PmsProduct implements Serializable {
         this.usePointLimit = usePointLimit;
     }
 
-    public String getSubTittle() {
-        return subTittle;
+    public String getSubTitle() {
+        return subTitle;
     }
 
-    public void setSubTittle(String subTittle) {
-        this.subTittle = subTittle == null ? null : subTittle.trim();
+    public void setSubTitle(String subTitle) {
+        this.subTitle = subTitle == null ? null : subTitle.trim();
     }
 
     public BigDecimal getOriginalPrice() {
@@ -560,12 +560,12 @@ public class PmsProduct implements Serializable {
         this.albumPics = albumPics == null ? null : albumPics.trim();
     }
 
-    public String getDetailTittle() {
-        return detailTittle;
+    public String getDetailTitle() {
+        return detailTitle;
     }
 
-    public void setDetailTittle(String detailTittle) {
-        this.detailTittle = detailTittle == null ? null : detailTittle.trim();
+    public void setDetailTitle(String detailTitle) {
+        this.detailTitle = detailTitle == null ? null : detailTitle.trim();
     }
 
     public LocalDateTime getPromotionStartTime() {
@@ -660,7 +660,7 @@ public class PmsProduct implements Serializable {
         sb.append(", giftGrowth=").append(giftGrowth);
         sb.append(", giftPoint=").append(giftPoint);
         sb.append(", usePointLimit=").append(usePointLimit);
-        sb.append(", subTittle=").append(subTittle);
+        sb.append(", subTitle=").append(subTitle);
         sb.append(", originalPrice=").append(originalPrice);
         sb.append(", stock=").append(stock);
         sb.append(", lowStock=").append(lowStock);
@@ -671,7 +671,7 @@ public class PmsProduct implements Serializable {
         sb.append(", keywords=").append(keywords);
         sb.append(", note=").append(note);
         sb.append(", albumPics=").append(albumPics);
-        sb.append(", detailTittle=").append(detailTittle);
+        sb.append(", detailTitle=").append(detailTitle);
         sb.append(", promotionStartTime=").append(promotionStartTime);
         sb.append(", promotionEndTime=").append(promotionEndTime);
         sb.append(", promotionPerLimit=").append(promotionPerLimit);

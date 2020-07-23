@@ -8,77 +8,77 @@ public class PmsProductCategory implements Serializable {
     /**
      * 上级分类的编号，0表示一级分类
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer parentId;
 
     /**
      * 商品分类的名称
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String name;
 
     /**
      * 分类的级别：0->1级；1->2级。
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer level;
 
     /**
      * 商品数量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productCount;
 
     /**
      * 商品的数量单位
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String productUnit;
 
     /**
      * 是否在客户端的导航栏显示：0->不显示；1->显示。
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer navStatus;
 
     /**
      * 是否在客户端显示：0->不显示；1->显示。
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer showStatus;
 
     /**
      * 排序
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer sort;
 
     /**
      * 图标
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String icon;
 
     /**
      * 关键字
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String keywords;
 
     /**
      * 描述
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String description;
 

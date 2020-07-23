@@ -9,84 +9,84 @@ public class PmsSkuStock implements Serializable {
     /**
      * 商品id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productId;
 
     /**
      * sku编码
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String skuCode;
 
     /**
      * 价格
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal price;
 
     /**
      * 库存量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer stock;
 
     /**
      * 预警库存量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer lowStock;
 
     /**
      * 规格属性1
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String sp1;
 
     /**
      * 规格属性 2
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String sp2;
 
     /**
      * 规格属性 3
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String sp3;
 
     /**
      * 展示的图片
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String pic;
 
     /**
      * 销量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer sale;
 
     /**
      * 单品促销价格
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal promotionPrice;
 
     /**
      * 锁定库存
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer lockStock;
 

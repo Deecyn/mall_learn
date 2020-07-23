@@ -1476,73 +1476,73 @@ public class PmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleIsNull() {
-            addCriterion("sub_tittle is null");
+        public Criteria andSubTitleIsNull() {
+            addCriterion("sub_title is null");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleIsNotNull() {
-            addCriterion("sub_tittle is not null");
+        public Criteria andSubTitleIsNotNull() {
+            addCriterion("sub_title is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleEqualTo(String value) {
-            addCriterion("sub_tittle =", value, "subTittle");
+        public Criteria andSubTitleEqualTo(String value) {
+            addCriterion("sub_title =", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleNotEqualTo(String value) {
-            addCriterion("sub_tittle <>", value, "subTittle");
+        public Criteria andSubTitleNotEqualTo(String value) {
+            addCriterion("sub_title <>", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleGreaterThan(String value) {
-            addCriterion("sub_tittle >", value, "subTittle");
+        public Criteria andSubTitleGreaterThan(String value) {
+            addCriterion("sub_title >", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleGreaterThanOrEqualTo(String value) {
-            addCriterion("sub_tittle >=", value, "subTittle");
+        public Criteria andSubTitleGreaterThanOrEqualTo(String value) {
+            addCriterion("sub_title >=", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleLessThan(String value) {
-            addCriterion("sub_tittle <", value, "subTittle");
+        public Criteria andSubTitleLessThan(String value) {
+            addCriterion("sub_title <", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleLessThanOrEqualTo(String value) {
-            addCriterion("sub_tittle <=", value, "subTittle");
+        public Criteria andSubTitleLessThanOrEqualTo(String value) {
+            addCriterion("sub_title <=", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleLike(String value) {
-            addCriterion("sub_tittle like", value, "subTittle");
+        public Criteria andSubTitleLike(String value) {
+            addCriterion("sub_title like", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleNotLike(String value) {
-            addCriterion("sub_tittle not like", value, "subTittle");
+        public Criteria andSubTitleNotLike(String value) {
+            addCriterion("sub_title not like", value, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleIn(List<String> values) {
-            addCriterion("sub_tittle in", values, "subTittle");
+        public Criteria andSubTitleIn(List<String> values) {
+            addCriterion("sub_title in", values, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleNotIn(List<String> values) {
-            addCriterion("sub_tittle not in", values, "subTittle");
+        public Criteria andSubTitleNotIn(List<String> values) {
+            addCriterion("sub_title not in", values, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleBetween(String value1, String value2) {
-            addCriterion("sub_tittle between", value1, value2, "subTittle");
+        public Criteria andSubTitleBetween(String value1, String value2) {
+            addCriterion("sub_title between", value1, value2, "subTitle");
             return (Criteria) this;
         }
 
-        public Criteria andSubTittleNotBetween(String value1, String value2) {
-            addCriterion("sub_tittle not between", value1, value2, "subTittle");
+        public Criteria andSubTitleNotBetween(String value1, String value2) {
+            addCriterion("sub_title not between", value1, value2, "subTitle");
             return (Criteria) this;
         }
 
@@ -2196,73 +2196,73 @@ public class PmsProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleIsNull() {
-            addCriterion("detail_tittle is null");
+        public Criteria andDetailTitleIsNull() {
+            addCriterion("detail_title is null");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleIsNotNull() {
-            addCriterion("detail_tittle is not null");
+        public Criteria andDetailTitleIsNotNull() {
+            addCriterion("detail_title is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleEqualTo(String value) {
-            addCriterion("detail_tittle =", value, "detailTittle");
+        public Criteria andDetailTitleEqualTo(String value) {
+            addCriterion("detail_title =", value, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleNotEqualTo(String value) {
-            addCriterion("detail_tittle <>", value, "detailTittle");
+        public Criteria andDetailTitleNotEqualTo(String value) {
+            addCriterion("detail_title <>", value, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleGreaterThan(String value) {
-            addCriterion("detail_tittle >", value, "detailTittle");
+        public Criteria andDetailTitleGreaterThan(String value) {
+            addCriterion("detail_title >", value, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleGreaterThanOrEqualTo(String value) {
-            addCriterion("detail_tittle >=", value, "detailTittle");
+        public Criteria andDetailTitleGreaterThanOrEqualTo(String value) {
+            addCriterion("detail_title >=", value, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleLessThan(String value) {
-            addCriterion("detail_tittle <", value, "detailTittle");
+        public Criteria andDetailTitleLessThan(String value) {
+            addCriterion("detail_title <", value, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleLessThanOrEqualTo(String value) {
-            addCriterion("detail_tittle <=", value, "detailTittle");
+        public Criteria andDetailTitleLessThanOrEqualTo(String value) {
+            addCriterion("detail_title <=", value, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleLike(String value) {
-            addCriterion("detail_tittle like", value, "detailTittle");
+        public Criteria andDetailTitleLike(String value) {
+            addCriterion("detail_title like", value, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleNotLike(String value) {
-            addCriterion("detail_tittle not like", value, "detailTittle");
+        public Criteria andDetailTitleNotLike(String value) {
+            addCriterion("detail_title not like", value, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleIn(List<String> values) {
-            addCriterion("detail_tittle in", values, "detailTittle");
+        public Criteria andDetailTitleIn(List<String> values) {
+            addCriterion("detail_title in", values, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleNotIn(List<String> values) {
-            addCriterion("detail_tittle not in", values, "detailTittle");
+        public Criteria andDetailTitleNotIn(List<String> values) {
+            addCriterion("detail_title not in", values, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleBetween(String value1, String value2) {
-            addCriterion("detail_tittle between", value1, value2, "detailTittle");
+        public Criteria andDetailTitleBetween(String value1, String value2) {
+            addCriterion("detail_title between", value1, value2, "detailTitle");
             return (Criteria) this;
         }
 
-        public Criteria andDetailTittleNotBetween(String value1, String value2) {
-            addCriterion("detail_tittle not between", value1, value2, "detailTittle");
+        public Criteria andDetailTitleNotBetween(String value1, String value2) {
+            addCriterion("detail_title not between", value1, value2, "detailTitle");
             return (Criteria) this;
         }
 

@@ -9,28 +9,28 @@ public class PmsMemberPrice implements Serializable {
     /**
      * 商品id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productId;
 
     /**
      * 会员等级id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer memberLevelId;
 
     /**
      * 会员价格
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal memberPrice;
 
     /**
      * 会员等级名称
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private String memberLevelName;
 

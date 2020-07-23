@@ -9,28 +9,28 @@ public class PmsProductLadder implements Serializable {
     /**
      * 商品id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productId;
 
     /**
      * 满足条件的商品数量
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer count;
 
     /**
      * 折扣
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal discount;
 
     /**
      * 打折后的价格
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal price;
 

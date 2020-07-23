@@ -9,21 +9,21 @@ public class PmsProductFullReduction implements Serializable {
     /**
      * 商品id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productId;
 
     /**
      * 满足条件的金额
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal fullPrice;
 
     /**
      * 商品减少的金额
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private BigDecimal reducePrice;
 

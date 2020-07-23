@@ -8,14 +8,14 @@ public class PmsProductCategoryAttributeRelation implements Serializable {
     /**
      * 商品分类id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productCategoryId;
 
     /**
      * 商品属性id
      *
-     * @mbg.generated 2020/06/01
+     * @mbg.generated 2020/07/22
      */
     private Integer productAttributeId;
 
