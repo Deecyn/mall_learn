@@ -18,7 +18,7 @@ public class Page<T> {
      */
     public static <T> Page<T> restPage(List<T> list,int pageNum,int pageSize) {
         Page<T> result = new Page<T>();
-        // TODO 假数据
+        // 假数据
         result.setTotalPage(pageNum + 1);
         result.setPageNum(pageNum);
         result.setPageSize(pageSize);
